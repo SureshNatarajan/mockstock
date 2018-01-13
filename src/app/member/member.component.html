@@ -1,0 +1,97 @@
+<div class="row">
+  <div class="col-sm-6">
+    <table class="table table-responsive">
+      <thead>
+        <th>Name</th>
+        <th>Mobile Number</th>
+        <th>Referred By</th>
+        <th>Member Since</th>
+        <th>Last Message Date</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let member of memberListObservable | async">
+          <td>{{member.memberName}}</td>
+          <td>{{member.memberMobileNumber}}</td>
+          <td>{{member.referredBy}}</td>
+          <td>{{member.joinedOn | date: 'medium' }}</td>
+          <td>{{member.lastMessagedOn | date: 'medium'}}</td>
+        </tr>
+      </tbody>
+    </table>  
+  </div>
+  <div class="col-sm-6">
+    <form [formGroup]="memberForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-3">
+              <label class="center-block">Name:</label>
+          </div>
+          <div class="col-sm-1">:</div>
+          <div class="col-sm-4">
+              <input class="form-control" formControlName="memberName">
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-sm-3">
+              <label class="center-block">Mobile Number:</label>
+          </div>
+          <div class="col-sm-1">:</div>
+          <div class="col-sm-4">
+              <input class="form-control" formControlName="memberMobileNumber">
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-sm-3">
+              <label class="center-block">Email ID:</label>
+          </div>
+          <div class="col-sm-1">:</div>
+          <div class="col-sm-4">
+              <input class="form-control" formControlName="emailId">
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-sm-3">
+              <label class="center-block">Referred By:</label>
+          </div>
+          <div class="col-sm-1">:</div>
+          <div class="col-sm-4">
+              <input class="form-control" formControlName="referredBy">
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-sm-3">
+              <label class="center-block">Joined On:</label>
+          </div>
+          <div class="col-sm-1">:</div>
+          <div class="col-sm-4">
+              <input class="form-control" formControlName="joinedOn">
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-sm-3">
+              <label class="center-block">Last Messaged On:</label>
+          </div>
+          <div class="col-sm-1">:</div>
+          <div class="col-sm-4">
+              <input class="form-control" formControlName="lastMessagedOn">
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-sm-3">
+              <button type="reset" class="btn btn-danger">Clear</button>
+          </div>
+          <div class="col-sm-2">:</div>
+          <div class="col-sm-3">
+              <button type="submit" class="btn btn-success" [disabled]="memberForm.pristine">Save</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

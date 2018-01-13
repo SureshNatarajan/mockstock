@@ -1,0 +1,9 @@
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #265a88;
+    border-color: #265a88;
+}
+
+.btn-primary {
+    background-image: linear-gradient(to bottom,#265a88,0,#265a88 100%);
+}

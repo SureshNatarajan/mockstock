@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-sm-6">
+      <table class="table table-responsive">
+        <thead>
+          <th>Stock Name</th>
+          <th>Suggested By</th>
+          <th>Suggested On</th>
+          <th>Suggested Price</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let suggestStock of stockListObservable | async">
+            <td>{{suggestStock.stockName}}</td>
+            <td>{{suggestStock.suggestedBy}}</td>
+            <td>{{suggestStock.suggestedOn | date: 'medium' }}</td>
+            <td>{{suggestStock.suggestedPrice}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
