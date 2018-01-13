@@ -1,1 +1,1 @@
-Testing git commit
+Testing git commit for repository
