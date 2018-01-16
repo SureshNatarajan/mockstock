@@ -1,0 +1,31 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-brand" href="#">
+    <div class="center-align-logo-text">
+      <span class="r-logo-column">Mock Stock</span>
+    </div>
+  </div>
+  <ul class="nav navbar-left nav-pills">
+    <li><a #homeMenu routerLink="/home" routerLinkActive="btn btn-primary">Home</a></li>
+    <li><a #stockSuggestionMenu routerLink="/stockSuggestions" routerLinkActive="btn btn-primary">Suggestions</a></li>
+    <li><a #membersMenu routerLink="/members" routerLinkActive="btn btn-primary">Admin</a></li>
+  </ul>
+  <form class="nav navbar-nav top-nav navbar-form navbar-left">
+      <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button class="btn btn-primary" type="submit">
+          <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+      </button>
+  </form>
+  <ul class="nav navbar-nav top-nav navbar-right pull-xs-right top-right-nav">
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+        <i class="glyphicon glyphicon-user"></i>
+        {{userEmail | titlecase}} <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="javascript:void(0);" (click)="logout()"><i class="fa fa-fw fa-power-off"></i>Logout</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>

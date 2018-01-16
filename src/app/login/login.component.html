@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="content">
+        <div class="row">
+            <div class="col-md-6">
+              <h2>&nbsp;</h2>
+              <ul class="list-group-item list-unstyled">
+                <li><h4>MockStock - Closed Group Discussion</h4></li>
+              </ul>
+            </div>
+            <div class="col-md-1">&nbsp;</div>
+            <div class="col-md-4">
+                <h2>Login to MockStock</h2>
+                <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" id="loginform" class="form login-form" role="form" novalidate >
+                    <div class="form-group input-group logininputcontrol" [ngClass]="{'has-error':!loginForm.controls['email'].valid && loginForm.controls['email'].touched}">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input class="form-control" type="text" placeholder="UserName" required [formControl]="loginForm.controls['email']" minlength="10">
+                      <i #emailFeedback class="form-control-feedback" style="display: block;" [ngClass]="{'has-error':!loginForm.controls['email'].valid && loginForm.controls['email'].touched}"></i>
+                    </div>
+                    <div class="form-group input-group logininputcontrol" [ngClass]="{'has-error':!loginForm.controls['password'].valid && loginForm.controls['password'].touched}">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                      <input class="form-control" type="password" placeholder="Password" [formControl]="loginForm.controls['password']" minlength="8">
+                      <i #passwordFeedback class="form-control-feedback" style="display: block" [ngClass]="{'has-error':!loginForm.controls['password'].valid && loginForm.controls['password'].touched}"></i>
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-danger btn-block" [disabled]="!loginForm.valid">Sign-In</button>
+                    </div>
+                    <div class="message-container" *ngIf="errorMessage">
+                      <small>{{errorMessage}}</small>
+                    </div>  
+                </form>
+            </div>
+            <div class="col-md-1">&nbsp;</div>
+        </div>
+      </div>
+</div>

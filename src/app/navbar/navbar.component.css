@@ -1,0 +1,32 @@
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #b5bfc9;
+    border-color: #b5bfc9;
+}
+.nav-pills {
+    margin-top: 7px !important;
+}
+.btn, .btn-primary {
+    background-image: linear-gradient(to bottom,#b5bfc9,0,#b5bfc9 100%);
+    font-size: 12px !important;
+}
+.r-logo-column {
+    color: #ffffff;
+    font-size: 20px !important;
+}
+.center-align-logo-text {
+    display: flex;
+    align-items: center;
+}
+.navbar-inverse {
+    background-image: linear-gradient(to bottom,#3c3c3c 0,#777 100%) !important;
+}
+a {
+    color: #ffffff !important;
+}
+a:hover {
+    color: #000000 !important;
+}
+.dropdown-menu>li>a {
+    color: #000 !important;
+}
